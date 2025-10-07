@@ -1,0 +1,112 @@
+<section class="
+    flex flex-col 
+    h-dvh w-full 
+    justify-center items-center 
+    p-4 
+    bg-[#0e1313]
+    text-white
+    relative
+">
+    
+    <button id="back-btn" class="
+        absolute top-4 left-4
+        px-6 py-2
+        transition-all duration-300
+        text-4xl
+        hover:scale-110
+        font-humane
+        tracking-widest
+        text-white/75
+    ">
+        < BACK
+    </button>
+    
+    <div class="w-full flex justify-center h-[30%]"> 
+        <img src="./src/assets/title.png" alt="Título" class="
+            h-full w-auto 
+            object-contain
+            pt-10
+        ">
+    </div>
+    
+    <div class="
+        w-3xl h-[70%] 
+        flex flex-row flex-nowrap
+        justify-center items-center
+        gap-4 md:gap-4 p-4
+    ">
+        
+        <a href="#game1" class="
+            game-link
+            block h-full w-1/4 overflow-hidden 
+            relative 
+            bg-black/90 mix-blend-lighten
+            transition-all duration-700 hover:scale-115 
+            filter brightness-100 hover:brightness-125
+            rounded-lg
+        "
+        data-text="CLASSIC"
+        data-color="#22c55e">
+            <img src="../src/assets/green.png" alt="Juego 1" class="w-full h-full object-contain rounded-2xl">
+        </a>
+
+        <a href="#game2" class="
+            game-link
+            block h-full w-1/4 overflow-hidden 
+            relative 
+            bg-black/90 mix-blend-lighten
+            transition-all duration-700 hover:scale-115 
+            filter brightness-100 hover:brightness-125
+            rounded-lg
+        "
+        data-text="MULTIPLAYER"
+        data-color="#E4C058">
+            <img src="../src/assets/yellow.png" alt="Juego 2" class="w-full h-full object-contain rounded-2xl">
+        </a>
+        
+        <a href="#game3" class="
+            game-link
+            block h-full w-1/4 overflow-hidden 
+            relative 
+            bg-black/50 mix-blend-lighten
+            transition-all duration-700 hover:scale-115 
+            filter brightness-100 hover:brightness-125 
+            rounded-lg
+        "
+        data-text="1 VS BOT"
+        data-color="#5689A3">
+            <img src="../src/assets/blue.png" alt="Juego 3" class="w-full h-full object-contain rounded-2xl">
+        </a>
+        
+        <a href="#game4" class="
+            game-link
+            block h-full w-1/4 overflow-hidden 
+            relative 
+            bg-black/50 mix-blend-lighten
+            transition-all duration-700 hover:scale-115 
+            filter brightness-100 hover:brightness-125 
+            rounded-lg
+        "
+        data-text="COMING SOON"
+        data-color="#D77319">
+            <img src="../src/assets/red.png" alt="Juego 4" class="w-full h-full object-contain rounded-2xl">
+        </a>
+    </div>
+
+    <div class="absolute bottom-16 font-humane tracking-wider text-5xl text-[#dbdbdb] h-32 flex flex-col justify-center items-center">
+    <p id="main-text" 
+   class="transition-all duration-700 translate-y-0 ease-in-out"
+   >
+    CHOOSE YOUR GAMEPLAY
+</p>
+    
+    <p id="dynamic-text" 
+   class="transition-all duration-700 translate-y-0 opacity-0 ease-in-out text-8xl tracking-wider"
+   style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);">
+</p>
+</div>
+
+    <div id="bottom-bar" 
+         class="bg-white/40 w-full h-8 min-h-8 blur-2xl transition-colors duration-500">
+    </div>
+</section>

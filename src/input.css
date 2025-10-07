@@ -10,7 +10,17 @@
 }
 /* Asegúrate de que la ruta (./fonts/...) sea correcta respecto a tu archivo CSS */
 
+@font-face {
+  font-family: 'humane'; /* Este es el nombre que usarás en Tailwind */
+  src: url('./fonts/Humane-VF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Opción recomendada para rendimiento */
+}
+
 @theme
 {
     --font-display: "w95fa", sans-serif;
+    --font-humane: "humane", sans-serif;
+
 }
