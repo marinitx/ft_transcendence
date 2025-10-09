@@ -1,5 +1,6 @@
 const app = document.getElementById("app");
 let activeLink: HTMLAnchorElement | null = null;
+let selectedGame: string | null = null;
 
 async function loadView(view: string) {
   if (!app) return;
@@ -10,7 +11,21 @@ async function loadView(view: string) {
 
   if (view === "menu") {
     initMenuScript();
+  } else if (view === "transition") {
+    initTransition();
   }
+}
+
+//this is for the "loading" page transition
+function initTransition() {
+  setTimeout(() => {
+    if (selectedGame) {
+      location.hash = selectedGame;
+      selectedGame = null;
+    } else {
+      location.hash = "menu";
+    }
+  }, 7000);
 }
 
 function initMenuScript() {
@@ -29,7 +44,14 @@ function initMenuScript() {
   const isMobile = () => window.innerWidth < 768;
 
   gameLinks.forEach(link => {
-    // Para desktop: usar hover
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const gameHash = link.getAttribute('href')?.replace('#', '') || 'game';
+      selectedGame = gameHash;
+      location.hash = 'transition';
+    });
+
+    //mantener hover solo en desktop
     if (!isMobile()) {
       link.addEventListener('mouseenter', () => {
         activateLink(link as HTMLAnchorElement);
@@ -37,23 +59,6 @@ function initMenuScript() {
 
       link.addEventListener('mouseleave', () => {
         deactivateLink();
-      });
-    } else {
-      // Para móvil: usar click
-      link.addEventListener('click', (e) => {
-        if (activeLink === link) {
-          // Segundo click: navegar
-          return;
-        } else {
-          // Primer click: mostrar efecto
-          e.preventDefault();
-          
-          if (activeLink) {
-            deactivateLink();
-          }
-          
-          activateLink(link as HTMLAnchorElement);
-        }
       });
     }
   });
@@ -102,6 +107,6 @@ window.addEventListener("hashchange", () => {
   loadView(view);
 });
 
-// Inicializar con la vista correcta
+//inicializar con la vista correcta
 const initialView = location.hash.replace("#", "") || "home";
 loadView(initialView);
