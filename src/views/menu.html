@@ -1,3 +1,4 @@
+
 <section class="
     flex flex-col 
     h-dvh w-full 
@@ -6,6 +7,7 @@
     bg-[#0e1313]
     text-white
     relative
+    overflow-hidden
 ">
     
     <button id="back-btn" class="
@@ -24,18 +26,20 @@
     </button>
     
     <div class="w-full flex justify-center h-[30%]"> 
-        <img src="./src/assets/title.png" alt="Título" class="
-            h-full w-auto 
+        <img src="./src/assets/title.png" alt="Transcendence The Final Project" class="
+            md:h-full md:w-auto 
             object-contain
-            pt-10
+            md:pt-10
+            pt-20
+            max-w-sm
         ">
     </div>
     
     <div class="
-        w-full md:w-3xl h-[70%] 
+        w-full md:w-4xl h-[70%] 
         flex flex-row flex-nowrap
         justify-center items-center
-        gap-2 md:gap-4 p-4
+        gap-0 md:gap-4 p-4
     ">
         
         <a href="#game1" class="
@@ -46,7 +50,7 @@
             transition-all duration-700 
             filter brightness-90 hover:brightness-125 active:brightness-125
             rounded-lg
-            hover:scale-110 md:hover:scale-110
+            hover:scale-95 md:hover:scale-95
         "
         data-text="CLASSIC"
         data-color="#22c55e">
@@ -61,7 +65,7 @@
             transition-all duration-700
             filter brightness-90 hover:brightness-125 active:brightness-125
             rounded-lg
-            hover:scale-110 md:hover:scale-110
+            hover:scale-95 md:hover:scale-95
         "
         data-text="MULTIPLAYER"
         data-color="#E4C058">
@@ -76,7 +80,7 @@
             transition-all duration-700
             filter brightness-90 hover:brightness-125 active:brightness-125
             rounded-lg
-            hover:scale-110 md:hover:scale-110
+            hover:scale-95 md:hover:scale-95
         "
         data-text="1 VS BOT"
         data-color="#5689A3">
@@ -91,7 +95,7 @@
             transition-all duration-700
             filter brightness-90 hover:brightness-125 active:brightness-125
             rounded-lg
-            hover:scale-110 md:hover:scale-110
+            hover:scale-95 md:hover:scale-95
         "
         data-text="COMING SOON"
         data-color="#D77319">
@@ -101,13 +105,13 @@
 
     <div class="absolute bottom-16 font-humane tracking-wider text-5xl md:text-5xl text-[#dbdbdb] h-32 flex flex-col justify-center items-center">
     <p id="main-text" 
-   class="transition-all duration-700 translate-y-0 ease-in-out text-3xl md:text-5xl"
+   class="transition-all duration-700 translate-y-0 ease-in-out text-5xl md:text-5xl"
    >
     CHOOSE YOUR GAMEPLAY
 </p>
     
     <p id="dynamic-text" 
-   class="transition-all duration-700 translate-y-0 opacity-0 ease-in-out text-5xl md:text-8xl tracking-wider"
+   class="transition-all duration-700 translate-y-0 opacity-0 ease-in-out text-8xl md:text-8xl tracking-wider"
    style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);">
 </p>
 </div>
