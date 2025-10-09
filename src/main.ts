@@ -38,7 +38,7 @@ function initMenuScript() {
   if (!gameLinks.length || !bottomBar || !mainText || !dynamicText || !backBtn) return;
 
   backBtn.addEventListener('click', () => {
-    window.history.back();
+    window.location.hash = 'home';
   });
 
   const isMobile = () => window.innerWidth < 768;
