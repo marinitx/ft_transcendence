@@ -1,8 +1,80 @@
-<section class="h-dvh w-full bg-black flex flex-col justify-center items-center text-white">
-    <div class="text-center p-8">
-        <p class="text-2xl mb-8">aquí iría el jueguito</p>
-        <button onclick="location.hash='menu'" class="px-8 py-3 bg-white/20 hover:bg-white/30 rounded-lg text-xl transition-all font-display">
-            Volver al menú
-        </button>
+<section 
+data-scare="true"
+class="relative h-dvh w-full flex justify-center items-center bg-cover bg-center"
+         style="background-image: url('./src/assets/bg-game.png');">
+  
+         
+         <div class="absolute inset-0 
+         
+         pointer-events-none z-50" style="filter: contrast(1.2) saturate(0.8) brightness(0.9);
+mix-blend-mode: multiply;
+background-color: rgba(10,10,20,0.2);
+"></div>
+
+<!-- Caja marco que crece/encoge con la arcade -->
+<div class="relative inline-block">
+    
+    <!-- FACE: detrás de la arcade (peek por derecha) -->
+    <img
+    src="./src/assets/face.png"
+    id="face"
+    alt="Face of a monster"
+    class="pointer-events-none absolute z-0 
+    top-[15%] right-[-7%] w-[55%] 
+    max-w-none opacity-0 transition-opacity duration-500"
+    />
+    
+    <!-- ARCADE: la base que define el tamaño -->
+    <img
+    src="./src/assets/arcade.png"
+    alt="Arcade Machine"
+    class="block w-auto max-w-full max-h-dvh object-contain relative z-10"
+    />
+    
+    <!-- HAND: por encima, en esquina superior izquierda -->
+    <img
+    src="./src/assets/hand.png"
+    id="hand"
+    alt="Hand holding the arcade"
+    class="pointer-events-none absolute z-40
+    top-[4%] left-[5%] w-[35%] 
+    max-w-none opacity-0 transition-opacity duration-500"
+    />
+    <!-- Overlay de “apagón” (ligero) -->
+    <!-- Dentro de <section data-scare="true" class="relative ..."> -->
+<div
+  id="scare-overlay"
+  class="absolute inset-0 pointer-events-none opacity-0 [will-change:opacity] z-[999]
+         bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_40%,rgba(0,0,0,0.9)_100%)]
+         mix-blend-overlay">
+</div>
+
+    
+    <!-- OVERLAYS ligados al tamaño de la arcade -->
+    <div class="absolute inset-0 pointer-events-none z-30">
+        <!-- Pantalla de la arcade (ajusta % para encajar) -->
+        <div class="absolute pointer-events-auto 
+        top-[23%] left-[27%] 
+        w-[45%] h-[32%]">
+        <canvas
+        id="pong-game"
+        width="640"
+          height="480"
+          class="w-full h-full bg-red-500 rounded-sm"
+        ></canvas>
+      </div>
     </div>
+  </div>
 </section>
+
+<style>
+@keyframes flashContrast {
+  0%   { filter: contrast(1) brightness(1); }
+  25%  { filter: contrast(1.8) brightness(0.7); }
+  60%  { filter: contrast(1.5) brightness(0.8); }
+  100% { filter: contrast(1) brightness(1); }
+}
+.flash-contrast {
+  animation: flashContrast 300ms ease-in-out;
+}
+</style>
